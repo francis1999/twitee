@@ -1,0 +1,30 @@
+# version: '3.8'
+# services:
+#     twitee:
+#       image: postgres:13
+#       ports:
+#         - 5434:5434
+#     environment:
+#       POSTGRES_USER: twitee
+#       POSTGRES_PASSWORD: twitee12345
+#       POSTGRES_DB: francotechs
+#       networks:
+#         - francoTechs
+# networks: 
+#   francoTechs:
+
+version: '3.8'
+services:
+  postgres:
+    image: postgres:14
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: twiteepassword
+      POSTGRES_DB: twiteedb
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+volumes:
+    postgres:
