@@ -62,6 +62,12 @@ export class AuthService{
             return this.signToken(user.id,user.email)
         
     }
+    
+
+    /* async getUserProfile(){
+        //const getUser=await this.prisma.auth.findAll()
+        return "getUser"
+    } */
 
     async signToken(
         userId:number, 
@@ -83,5 +89,6 @@ export class AuthService{
         return {
             access_token:token
         }
-        }
+    
+    }
 }

@@ -26,6 +26,10 @@ export class LoginDto{
     @IsNotEmpty()
     @IsString()
     password: string
-
-   
+}
+export class UserDto{
+    
+    email: string
+    userName: string
+    name: string
 }
