@@ -1,6 +1,6 @@
 import { ForbiddenException,Injectable } from "@nestjs/common";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime";
-import { PrismaService } from "src/prisma/prisma.service";
+import { PrismaService } from "../prisma/prisma.service";
 import { AuthDto, LoginDto } from "./dto";
 import * as argon from 'argon2'
 import { MailerService } from "@nestjs-modules/mailer";
@@ -30,7 +30,7 @@ export class AuthService{
             to:Auth.email,
             from:"gbade1988@gmail.com",
             subject: 'Verification Link',
-            text: 'Welcome NestJS Email Sending Tutorial', 
+            text: 'Please Use this link to verify your account', 
            });
         return this.signToken(Auth.id,Auth.email)
         //delete Auth.hash

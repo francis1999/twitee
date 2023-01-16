@@ -13,7 +13,7 @@ import { HttpStatus } from "@nestjs/common/enums";
 export class AuthController{
     constructor(private authService: AuthService){}
    
-    @HttpCode(HttpStatus.CREATED)
+
     @Post("sign-up")
     signup(@Body() dto:AuthDto){
         return this.authService.signup(dto)
