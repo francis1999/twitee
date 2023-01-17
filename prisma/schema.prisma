@@ -37,6 +37,7 @@ model Twit{
   id Int @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  title String
   content String
   authId Int 
   auth Auth @relation(fields: [authId], references: [id])
